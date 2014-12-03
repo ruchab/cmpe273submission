@@ -453,33 +453,17 @@ val request: WebRequest = null
   @ResponseBody
   def getCounterValue(): String = {
   logger.info("Start getCounterValue.")
-  val key = "/counter" //this is a string
- // counter = counter + 1 //this counter is string so convert in int
- // var result:EtcdResult = this.client.set(key, counter.toString)
+  val key = "/counter" 
   var result:EtcdResult = this.client.get(key)
   var etcdValue = (result.node.value).toInt
   etcdValue = etcdValue + 1
   result = this.client.set(key,""+etcdValue)
   println(result)
   
- "counter="+etcdValue
+// "counter="+etcdValue
+etcdValue
 
   }
-
-/*@RequestMapping(value = "/api/v1/counter",method = RequestMethod.GET)
-
-    public @ResponseBody Integer updateCounter() throws Exception{
-    
-    String key = "counter";
-    EtcdResult result = this.client.get(key);
-    Integer etcdCounter = Integer.parseInt(result.node.value);
-    etcdCounter++;
-    result = this.client.set(key, ""+etcdCounter);
-
-    return etcdCounter;
-    //return etcdCounter;
-       
-   }*/
  
 }
 
