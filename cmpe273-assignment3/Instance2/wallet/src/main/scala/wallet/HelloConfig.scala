@@ -453,6 +453,7 @@ val request: WebRequest = null
   @ResponseBody
   def getCounterValue(): String = {
   logger.info("Start getCounterValue.")
+  try{
   val key = "/counter" 
   var result:EtcdResult = this.client.get(key)
   var etcdValue = (result.node.value).toInt
@@ -461,13 +462,25 @@ val request: WebRequest = null
   println(result)
   
 // "counter="+etcdValue
-etcdValue
-
-  }
-
-
-
+etcdValue.toString
 }
+ else{
+    val initialCounter = 1
+    val writeResult: EtcdResult = client.set(key,initialCounter.toString)
+    initialCounter.toString
+    }
+  }catch{
+    case exception:Exception =>{
+        exception.getMessage
+    }
+  }
+ 
+}
+}
+
+
+
+
 
 
 
