@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/scala"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.springsource.ide.eclipse.gradle.classpathcontainer"/>
+	<classpathentry kind="lib" path="/Users/Rucha/Documents/Fall 2014/CMPE 273/Assignment_3/wallet/etcd-client-0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/Users/Rucha/Documents/Fall 2014/CMPE 273/Assignment_3/wallet/etcd-client-0.1-SNAPSHOT-jar-with-dependencies.jar"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
