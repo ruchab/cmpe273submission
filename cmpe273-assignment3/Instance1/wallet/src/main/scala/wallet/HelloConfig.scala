@@ -446,7 +446,7 @@ val request: WebRequest = null
   
 /// var counter =0
   //to start the etcd single-machine cluster do ./bin/etcd	
- var client = new EtcdClient(URI.create("http://54.67.103.220:4001/"))
+ var client = new EtcdClient(URI.create("http://54.183.225.139:4001/"))
 
 
   @RequestMapping(value = Array("api/v1/counter"), method = Array(RequestMethod.GET))
