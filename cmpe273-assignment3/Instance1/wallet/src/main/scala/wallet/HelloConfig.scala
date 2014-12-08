@@ -446,16 +446,18 @@ val request: WebRequest = null
   
 /// var counter =0
   //to start the etcd single-machine cluster do ./bin/etcd	
- var client = new EtcdClient(URI.create("http://54.183.225.139:4001/"))
+ var client = new EtcdClient(URI.create("http://127.0.0.1:4001/"))
 
 
   @RequestMapping(value = Array("api/v1/counter"), method = Array(RequestMethod.GET))
   @ResponseBody
   def getCounterValue(): String = {
   logger.info("Start getCounterValue.")
+
   try{
   val key = "/006761859" 
   var result:EtcdResult = this.client.get(key)
+  if(result!=null){
   var etcdValue = (result.node.value).toInt
   etcdValue = etcdValue + 1
   result = this.client.set(key,""+etcdValue)
