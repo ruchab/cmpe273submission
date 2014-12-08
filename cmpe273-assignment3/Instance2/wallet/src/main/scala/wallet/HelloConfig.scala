@@ -442,6 +442,14 @@ val request: WebRequest = null
   }
 
 
+
+@RequestMapping(value = Array("api/v1/health"), method = Array(RequestMethod.GET))
+  @ResponseBody()
+  def getHealth(): String = {
+  logger.info("Start health check.")
+  "ok"
+}
+
   ///Assignment 3 part
   
  //var counter =0
